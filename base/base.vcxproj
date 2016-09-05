@@ -139,6 +139,7 @@
     <ClCompile Include="md5.cpp" />
     <ClCompile Include="signal.cpp" />
     <ClCompile Include="thread.cpp" />
+    <ClCompile Include="threadpool.cpp" />
     <ClCompile Include="timestamp.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -153,6 +154,7 @@
     <ClInclude Include="queue.h" />
     <ClInclude Include="signal.h" />
     <ClInclude Include="thread.h" />
+    <ClInclude Include="threadpool.h" />
     <ClInclude Include="timequeue.h" />
     <ClInclude Include="timestamp.h" />
   </ItemGroup>

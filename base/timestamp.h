@@ -73,6 +73,17 @@ namespace eko
 	private:
 		UInt64 microSeconds_;			//∫¡√Î
 	};
+
+	class TimeTick		//º∆ ±
+	{
+	public:
+		MicroSecond lapse()
+		{
+			return Timestamp::NOW() - start_;
+		}
+	private:
+		Timestamp start_;			
+	};
 }
 
 inline std::ostream& operator<<(std::ostream& os, const eko::Timestamp& tm)

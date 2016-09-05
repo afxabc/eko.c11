@@ -10,9 +10,7 @@ extern void test_string();
 extern void test_functor();
 extern void test_functorloop();
 extern void test_signal();
-extern void test_udp(const char*);
-extern void test_tcp(const char*);
-extern void test_serial(const char*);
+extern void test_threadpool();
 
 
 void print_hex_dat(BYTE *dat, const int len)
@@ -104,16 +102,18 @@ int main(int argc, const char* argv[])
 {
     LOGLEVEL(DEBUG);
 
+	srand((unsigned int)time(NULL));
 //  test_queue();
 //	test_timequeue();
 //	test_buffer();
 //	test_string();
-	test_functor();
+//	test_functor();
 //	test_functorloop();
 //	test_signal();
 //	test_udp(argv[1]);
 //	test_tcp(argv[1]);
 //	test_serial(argv[1]);
+	test_threadpool();
 
 #ifdef WIN32
     system("pause");

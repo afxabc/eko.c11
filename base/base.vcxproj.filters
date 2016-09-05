@@ -45,6 +45,9 @@
     <ClCompile Include="timestamp.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="threadpool.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="astring.h">
@@ -84,6 +87,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="timestamp.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="threadpool.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

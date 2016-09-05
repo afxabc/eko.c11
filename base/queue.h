@@ -114,12 +114,12 @@ namespace eko
 
 		if (back)
 		{
-			data = queue_.back();
+			data = std::move(queue_.back());
 			queue_.pop_back();
 		}
 		else
 		{
-			data = queue_.front();
+			data = std::move(queue_.front());
 			queue_.pop_front();
 		}
 

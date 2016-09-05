@@ -157,6 +157,7 @@
     <ClCompile Include="test_functorloop.cpp" />
     <ClCompile Include="test_queue.cpp" />
     <ClCompile Include="test_signal.cpp" />
+    <ClCompile Include="test_threadpool.cpp" />
     <ClCompile Include="test_timequeue.cpp" />
   </ItemGroup>
   <ItemGroup>

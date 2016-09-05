@@ -39,6 +39,9 @@
     <ClCompile Include="test_timequeue.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="test_threadpool.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="test.h">
