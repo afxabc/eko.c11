@@ -34,14 +34,31 @@ int Timestamp::toString(char* buf, int size) const
 
 	int ms = static_cast<int>(microSeconds_%1000);
 	time_t t = static_cast<time_t>(microSeconds_/1000);
-//	tm* p = gmtime(&t);
-#ifdef WIN32
+
+	bool showDay = true;
+	if (microSeconds_ < 3600 * 1000 * 24)
+		showDay = false;
+
 	tm tm_;
 	tm* p = &tm_;
-	localtime_s(&tm_, &t);
+#ifdef WIN32
+	if (showDay)
+		localtime_s(p, &t);
+	else gmtime_s(p, &t);
 #else
-	tm* p = localtime(&t)
+	if (showDay)
+		localtime_r(&t, p);
+	else gmtime_r(&t, p);
 #endif
+
+	if (!showDay)
+	{
+		if (p->tm_hour > 0)
+			return snprintf(buf, size, "%02d:%02d:%02d.%03d ",
+				p->tm_hour, p->tm_min, p->tm_sec, ms);
+		else return snprintf(buf, size, "%02d:%02d.%03d ",
+				p->tm_min, p->tm_sec, ms);
+	}
 
 #ifdef WIN32
 	static const int YEAR_BEGIN = 1531;
@@ -49,9 +66,9 @@ int Timestamp::toString(char* buf, int size) const
 	static const int YEAR_BEGIN = 1900;
 #endif
 
-	return snprintf(buf, size, "%04d-%02d-%02d %02d:%02d:%02d ",
+	return snprintf(buf, size, "%04d-%02d-%02d %02d:%02d:%02d.%03d ",
 				p->tm_year+YEAR_BEGIN, p->tm_mon+1, p->tm_mday,
-				p->tm_hour, p->tm_min, p->tm_sec);
+				p->tm_hour, p->tm_min, p->tm_sec, ms);
 }
 
 std::string Timestamp::toString() const

@@ -29,7 +29,8 @@ void getLoop()
 void test_timequeue()
 {
 	Timestamp now;
-    LOGI("\n%s ======= test_timequeue =======", now.toString().c_str());
+	Timestamp ttt = Timestamp(1200789);
+    LOGI("\n%s ======= test_timequeue =======", ttt.toString().c_str());
 
 	int num = 6;
 //	queue.insert(num, MicroSecond(num*1000));

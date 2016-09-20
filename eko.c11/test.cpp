@@ -104,7 +104,7 @@ int main(int argc, const char* argv[])
 
 	srand((unsigned int)time(NULL));
 //  test_queue();
-//	test_timequeue();
+	test_timequeue();
 //	test_buffer();
 //	test_string();
 //	test_functor();
@@ -113,7 +113,7 @@ int main(int argc, const char* argv[])
 //	test_udp(argv[1]);
 //	test_tcp(argv[1]);
 //	test_serial(argv[1]);
-	test_threadpool();
+//	test_threadpool();
 
 #ifdef WIN32
     system("pause");
